@@ -36,6 +36,7 @@ public class SummeFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
+        HartgeldFragment.anzahlMunzenArrayFuellen();
         TextView Hartgeld = (TextView) mySummeRootView.findViewById(R.id.summeHartgeld);
         Hartgeld.setText(String.valueOf(HartgeldFragment.getSummeHartgeld()));
     }

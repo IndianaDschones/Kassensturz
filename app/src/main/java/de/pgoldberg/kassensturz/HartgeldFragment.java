@@ -16,17 +16,17 @@ public class HartgeldFragment extends Fragment {
     private static double summeHartgeld = 0.0;
 
     // Array mit den Wertigkeiten der Münzen
-    private Double[] wertMuenzen = {0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1.0, 2.0};
+    private static Double[] wertMuenzen = {0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1.0, 2.0};
 
     // Array mit EditText-IDs der Münzen
-    private String[] hartgeldAnzahlET = {"editText_1CentAnzahl", "editText_2CentAnzahl", "editText_5CentAnzahl",
+    private static String[] hartgeldAnzahlET = {"editText_1CentAnzahl", "editText_2CentAnzahl", "editText_5CentAnzahl",
             "editText_10CentAnzahl", "editText_20CentAnzahl", "editText_50CentAnzahl", "editText_1EuroAnzahl",
             "editText_2EuroAnzahl"};
 
     // Array mit den Anzahlen der Münzen
-    private Integer[] anzahlMuenzen = new Integer[8];
+    private static Integer[] anzahlMuenzen = new Integer[8];
 
-    private View myRootView;
+    private static View myRootView;
 
     public HartgeldFragment() {
     }
@@ -41,21 +41,16 @@ public class HartgeldFragment extends Fragment {
         return rootView;
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        anzahlMunzenArrayFuellen();
-    }
 
     @Override
     public void onResume(){
         super.onResume();
 
-        summeHartgeld = 666.0;
+        summeHartgeld = 0.0;
+        //anzahlMunzenArrayFuellen();
     }
 
-    public void anzahlMunzenArrayFuellen() {
+    public static void anzahlMunzenArrayFuellen() {
         for (int i = 0; i < hartgeldAnzahlET.length; i++) {
             // String für die EditText-IDs der Münzen: EditText_1CentAnzahl usw
             String eTIDs = hartgeldAnzahlET[i];
@@ -78,7 +73,7 @@ public class HartgeldFragment extends Fragment {
     /**
      * Summme des Hartgelds mittels Anzahl * Wert berechnen
      */
-    public void summeHartgeld() {
+    public static void summeHartgeld() {
         for (int i = 0; i < wertMuenzen.length; i++) {
             summeHartgeld = summeHartgeld + (anzahlMuenzen[i] * wertMuenzen[i]);
         }
