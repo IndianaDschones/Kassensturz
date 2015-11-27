@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Kassensturz</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_neue_kasse">Neue Kasse</string>
+
+    <string name="hint_Kassenname">Name der Kasse</string>
+    <string name="hint_Dummy">Hier sollst du was reinschreiben!</string>
+    <string name="title_activity_neuer_kassensturz">Neuer Kassensturz</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="button_neuerKassensturz">Debug: Neuer Kassensturz</string>
+    <string name="title_activity_hartgeld">Hartgeld</string>
+
+    <string name="textView_1Cent">1 Cent</string>
+    <string name="textView_2Cent">2 Cent</string>
+    <string name="textView_5Cent">5 Cent</string>
+    <string name="textView_10Cent">10 Cent</string>
+    <string name="textView_20Cent">20 Cent</string>
+    <string name="textView_50Cent">50 Cent</string>
+    <string name="textView_1Euro">1 Euro</string>
+    <string name="textView_2Euro">2 Euro</string>
+
+    <string name="textView_5Euro">5 Euro</string>
+    <string name="textView_10Euro">10 Euro</string>
+    <string name="textView_20Euro">20 Euro</string>
+    <string name="textView_50Euro">50 Euro</string>
+    <string name="textView_100Euro">100 Euro</string>
+    <string name="textView_200Euro">200 Euro</string>
+    <string name="textView_500Euro">500 Euro</string>
+
+    <string name="textView_SummeHartgeld">Summe Hartgeld</string>
+    <string name="textView_SummePapiergeld">Summe Papiergeld</string>
+    <string name="textView_SummeKassensturz">Summe Kassensturz</string>
+
+    <string name="dialog_neue_kasse">Neue Kasse anlegen</string>
+    <string name="dialog_button_anlegen">Anlegen</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

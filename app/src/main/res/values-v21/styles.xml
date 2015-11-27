@@ -1,0 +1,29 @@
+<resources>>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Buttonfarbe -->
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <!-- Titel- und Textfarbe -->
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <!-- Hintergrundfarbe -->
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+<!-- ToDo Style anwenden -->
+    <style name="MyMenuDialogStyle" parent="Widget.AppCompat.Light.ListView.DropDown">
+        <!-- Buttonfarbe -->
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <!-- Titel- und Textfarbe -->
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <!-- Hintergrundfarbe -->
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+</resources>
