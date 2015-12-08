@@ -43,7 +43,8 @@
                     android:text=""
                     android:id="@+id/summeHartgeld"
                     android:layout_column="2"
-                    android:paddingLeft="48dp" />
+                    android:paddingLeft="48dp"
+                    android:digits="2" />
 
             </TableRow>
 

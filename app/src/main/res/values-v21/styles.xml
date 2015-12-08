@@ -9,12 +9,13 @@
     </style>
 
     <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <!-- Buttonfarbe -->
-        <item name="android:colorAccent">@color/colorAccent</item>
         <!-- Titel- und Textfarbe -->
-        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
         <!-- Hintergrundfarbe -->
         <item name="android:background">@color/colorBackground</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorBackground</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
     </style>
 <!-- ToDo Style anwenden -->
     <style name="MyMenuDialogStyle" parent="Widget.AppCompat.Light.ListView.DropDown">

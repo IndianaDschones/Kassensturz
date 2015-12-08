@@ -37,7 +37,8 @@
                     android:layout_span="0"
                     android:ems="10"
                     android:inputType="number"
-                    android:text="1" />
+                    android:text="1"
+                    android:maxLength="4"/>
             </TableRow>
 
             <!--2Cent-->
@@ -58,7 +59,8 @@
                     android:layout_height="wrap_content"
                     android:layout_column="2"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4"/>
             </TableRow>
 
             <!--5 Cent-->
@@ -79,7 +81,8 @@
                     android:layout_height="wrap_content"
                     android:layout_column="2"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4"/>
             </TableRow>
 
             <!--10 Cent-->
@@ -100,7 +103,8 @@
                     android:layout_height="wrap_content"
                     android:layout_column="2"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4"/>
             </TableRow>
 
             <!--20 Cent-->
@@ -121,7 +125,8 @@
                     android:layout_height="wrap_content"
                     android:layout_column="2"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4"/>
             </TableRow>
 
             <!--50 Cent-->
@@ -142,7 +147,8 @@
                     android:layout_height="wrap_content"
                     android:layout_column="2"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4"/>
             </TableRow>
 
             <!--1 Euro-->
@@ -163,7 +169,8 @@
                     android:layout_height="wrap_content"
                     android:layout_column="2"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4"/>
             </TableRow>
 
             <!--2 Euro-->
@@ -184,7 +191,8 @@
                     android:layout_height="wrap_content"
                     android:layout_column="2"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4"/>
             </TableRow>
         </TableLayout>
     </ScrollView>

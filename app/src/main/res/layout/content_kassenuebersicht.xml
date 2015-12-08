@@ -18,6 +18,7 @@
         android:id="@+id/button_neuerKassensturz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:text="@string/button_neuerKassensturz"/>
 
 </FrameLayout>

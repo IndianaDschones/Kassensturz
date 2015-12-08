@@ -4,16 +4,27 @@ package de.pgoldberg.kassensturz;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.support.v4.app.DialogFragment;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class Kassenuebersicht extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Kassenuebersicht extends AppCompatActivity implements NeueKasse.NoticeDialogListener {
+
+    private ListView listView;
+    List<String> kassennamen = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +38,9 @@ public class Kassenuebersicht extends AppCompatActivity {
             public void onClick(View view) {
                 /*Intent neueKasse = new Intent(Kassenuebersicht.this, NeueKasse.class);
                 showDialog(neueKasse);*/
-                DialogFragment neueKasse = new NeueKasse();
-                neueKasse.show(getSupportFragmentManager(), "neueKasse");
+/*                DialogFragment neueKasse = new NeueKasse();
+                neueKasse.show(getSupportFragmentManager(), "neueKasse");*/
+                showNoticeDialog();
             }
         });
 
@@ -40,6 +52,35 @@ public class Kassenuebersicht extends AppCompatActivity {
                 startActivity(neuerKassensturz);
             }
         });
+
+        listView = (ListView) findViewById(R.id.listViewKassen);
+
+
+        kassennamen.add("Bar");
+
+        ArrayAdapter<String> kassennamenArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, kassennamen);
+        listView.setAdapter(kassennamenArrayAdapter);
+    }
+
+    public void showNoticeDialog() {
+        // Create an instance of the dialog fragment and show it
+        DialogFragment dialog = new NeueKasse();
+        dialog.show(getSupportFragmentManager(), "NeueKasse");
+    }
+
+
+    // The dialog fragment receives a reference to this Activity through the
+    // Fragment.onAttach() callback, which it uses to call the following methods
+    // defined by the NoticeDialogFragment.NoticeDialogListener interface
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        // User touched the dialog's positive button
+        EditText et_Kasse = (EditText) dialog.getDialog().findViewById(R.id.et_Kassenname);
+        String kasse = et_Kasse.getText().toString();
+        if (kasse.length()<=0){
+            snackbar("Ungültiger Kassennname.");
+        } else {
+     kassennamen.add(kasse);}
     }
 
     @Override
@@ -62,5 +103,11 @@ public class Kassenuebersicht extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void snackbar(String message){
+       Snackbar.make(findViewById(R.id.listViewKassen) , message, Snackbar.LENGTH_SHORT)
+               .show();
+
     }
 }
