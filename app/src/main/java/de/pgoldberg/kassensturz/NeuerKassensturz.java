@@ -178,8 +178,8 @@ public class NeuerKassensturz extends AppCompatActivity {
         }
 
         void calculateSum() {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.layout.fragment_hartgeld, new HartgeldFragment()).commit();
+            HartgeldFragment hartgeldFragment = (HartgeldFragment) getFragmentManager().findFragmentById();
+            hartgeldFragment.anzahlMunzenArrayFuellen();
         }
 
     }
