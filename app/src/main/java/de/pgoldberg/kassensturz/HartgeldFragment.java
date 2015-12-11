@@ -1,8 +1,10 @@
 package de.pgoldberg.kassensturz;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +28,7 @@ public class HartgeldFragment extends Fragment {
     // Array mit den Anzahlen der Münzen
     private Integer[] anzahlMuenzen = new Integer[8];
 
-   // private View myRootView;
+    // private View myRootView;
 
     public HartgeldFragment() {
     }
@@ -36,29 +38,30 @@ public class HartgeldFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_hartgeld, container, false);
 
-        //myRootView = rootView;
-
         return rootView;
     }
 
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         summeHartgeld = 0.0;
         //anzahlMunzenArrayFuellen();
     }
 
     @Override
-    public void onPause(){
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onPause() {
         super.onPause();
         //getView().getRootView();
         //getParentFragment().onPause();
         //summeHartgeld = 0.0;
         anzahlMunzenArrayFuellen();
-
-            }
-
+    }
 
     public void anzahlMunzenArrayFuellen() {
         for (int i = 0; i < hartgeldAnzahlET.length; i++) {
@@ -89,8 +92,8 @@ public class HartgeldFragment extends Fragment {
         }
     }
 
-    public static double getSummeHartgeld() {
 
+    public static double getSummeHartgeld() {
         return summeHartgeld;
     }
 }

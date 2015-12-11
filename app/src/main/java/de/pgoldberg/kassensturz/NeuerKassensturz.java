@@ -66,7 +66,6 @@ public class NeuerKassensturz extends AppCompatActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -150,7 +149,6 @@ public class NeuerKassensturz extends AppCompatActivity {
                 // SUMME
                 case 2:
                     frag = new SummeFragment();
-                    //HartgeldFragment.getSummeHartgeld();
                     break;
                 // HARGELD
                 case 0:
@@ -178,5 +176,11 @@ public class NeuerKassensturz extends AppCompatActivity {
             }
             return null;
         }
+
+        void calculateSum() {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.layout.fragment_hartgeld, new HartgeldFragment()).commit();
+        }
+
     }
 }
