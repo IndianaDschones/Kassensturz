@@ -46,7 +46,6 @@ public class HartgeldFragment extends Fragment {
     public void onResume() {
         super.onResume();
         summeHartgeld = 0.0;
-        //anzahlMunzenArrayFuellen();
     }
 
     @Override
