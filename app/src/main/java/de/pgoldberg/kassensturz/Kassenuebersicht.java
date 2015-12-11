@@ -16,7 +16,10 @@ import android.widget.Button;
 import android.support.v4.app.DialogFragment;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ public class Kassenuebersicht extends AppCompatActivity implements NeueKasse.Not
 
     private ListView listView;
     List<String> kassennamen = new ArrayList<String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +36,15 @@ public class Kassenuebersicht extends AppCompatActivity implements NeueKasse.Not
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /**
+         * NeueKasse erstellen
+         * Es erscheint der AlterDialog mit dem Textfeld zum anlegen einer neuen Kasse
+         */
         FloatingActionButton fabNeueKasse = (FloatingActionButton) findViewById(R.id.fabNeueKasse);
         fabNeueKasse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent neueKasse = new Intent(Kassenuebersicht.this, NeueKasse.class);
-                showDialog(neueKasse);*/
-/*                DialogFragment neueKasse = new NeueKasse();
-                neueKasse.show(getSupportFragmentManager(), "neueKasse");*/
+                // Methode zum Dialogaufruf
                 showNoticeDialog();
             }
         });
@@ -55,11 +60,14 @@ public class Kassenuebersicht extends AppCompatActivity implements NeueKasse.Not
 
         listView = (ListView) findViewById(R.id.listViewKassen);
 
-
-        kassennamen.add("Bar");
-
         ArrayAdapter<String> kassennamenArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, kassennamen);
         listView.setAdapter(kassennamenArrayAdapter);
+
+        //ToDo Hinweis anzeigen, wenn keine Kassen angelegt
+        if (kassennamen.isEmpty()) {
+            TextView empty = (TextView) findViewById(R.id.kassenuebersichtEmptyState);
+            empty.setText("Sie haben noch keine Kassen angelegt.");
+        }
     }
 
     public void showNoticeDialog() {
@@ -77,10 +85,12 @@ public class Kassenuebersicht extends AppCompatActivity implements NeueKasse.Not
         // User touched the dialog's positive button
         EditText et_Kasse = (EditText) dialog.getDialog().findViewById(R.id.et_Kassenname);
         String kasse = et_Kasse.getText().toString();
-        if (kasse.length()<=0){
+        //ToDo Meldung über ungültigen Namen IN EditText auslagern
+        if (kasse.length() <= 0) {
             snackbar("Ungültiger Kassennname.");
         } else {
-     kassennamen.add(kasse);}
+            kassennamen.add(kasse.trim());
+        }
     }
 
     @Override
@@ -105,9 +115,8 @@ public class Kassenuebersicht extends AppCompatActivity implements NeueKasse.Not
         return super.onOptionsItemSelected(item);
     }
 
-    public void snackbar(String message){
-       Snackbar.make(findViewById(R.id.listViewKassen) , message, Snackbar.LENGTH_SHORT)
-               .show();
-
+    public void snackbar(String message) {
+        Snackbar.make(findViewById(R.id.listViewKassen), message, Snackbar.LENGTH_SHORT)
+                .show();
     }
 }

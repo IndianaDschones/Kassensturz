@@ -114,6 +114,7 @@ public class NeuerKassensturz extends AppCompatActivity {
             return fragment;
         }
 
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -149,6 +150,7 @@ public class NeuerKassensturz extends AppCompatActivity {
                 // SUMME
                 case 2:
                     frag = new SummeFragment();
+                    //HartgeldFragment.getSummeHartgeld();
                     break;
                 // HARGELD
                 case 0:

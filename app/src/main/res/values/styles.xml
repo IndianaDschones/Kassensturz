@@ -16,6 +16,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    k
+
+    <style name="MyMenuDialogStyle" parent="Base.Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:actionOverflowButtonStyle">@color/colorBackground</item>
+    </style>
 
     <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
         <!-- Buttonfarbe

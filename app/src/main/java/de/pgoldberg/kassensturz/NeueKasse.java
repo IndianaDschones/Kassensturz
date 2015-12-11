@@ -2,11 +2,14 @@ package de.pgoldberg.kassensturz;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.renderscript.ScriptGroup;
 import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 public class NeueKasse extends DialogFragment {
@@ -17,12 +20,16 @@ public class NeueKasse extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.MyAlertDialogStyle);
         builder.setView(R.layout.activity_neue_kasse);
         builder.setTitle(R.string.dialog_neue_kasse);
-        //builder.setMessage(R.layout.activity_neue_kasse);
+
+        //ToDo Absturz wegbekommen, EditText korrekt finden
+/*        EditText et_KName = (EditText) getView().findViewById(R.id.et_Kassenname);
+        et_KName.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);*/
+
         builder.setPositiveButton(R.string.dialog_button_anlegen, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                // ToDo: Neue Kasse erzeugen
-                // Send the positive button event back to the host activity
                 mListener.onDialogPositiveClick(NeueKasse.this);
             }
         });

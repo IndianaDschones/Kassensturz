@@ -42,20 +42,20 @@ public class HartgeldFragment extends Fragment {
     }
 
 
-/*    @Override
+    @Override
     public void onResume(){
         super.onResume();
         summeHartgeld = 0.0;
-        anzahlMunzenArrayFuellen();
-    }*/
+        //anzahlMunzenArrayFuellen();
+    }
 
     @Override
     public void onPause(){
         super.onPause();
         //getView().getRootView();
         //getParentFragment().onPause();
-        summeHartgeld = 60.0;
-        //anzahlMunzenArrayFuellen();
+        //summeHartgeld = 0.0;
+        anzahlMunzenArrayFuellen();
 
             }
 

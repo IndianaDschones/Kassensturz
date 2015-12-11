@@ -28,20 +28,16 @@ public class SummeFragment extends Fragment {
         // Summe/Text (aus HargeldFragment.summeHartgeld()) setzen
         Hartgeld.setText(String.valueOf(HartgeldFragment.getSummeHartgeld()));*/
 
-        HartgeldFragment.getSummeHartgeld();
-        TextView Hartgeld = (TextView) rootView.findViewById(R.id.summeHartgeld);
-        Hartgeld.setText(String.format(String.valueOf(HartgeldFragment.getSummeHartgeld()),"%.2f"));
-
         //mySummeRootView = rootView;
 
         return rootView;
     }
 
-/*    @Override
+    @Override
     public void onStart(){
         super.onStart();
         HartgeldFragment.getSummeHartgeld();
         TextView Hartgeld = (TextView) getView().findViewById(R.id.summeHartgeld);
         Hartgeld.setText(String.format(String.valueOf(HartgeldFragment.getSummeHartgeld()),"%.2f"));
-    }*/
+    }
 }
