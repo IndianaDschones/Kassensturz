@@ -87,7 +87,7 @@ public class Kassenuebersicht extends AppCompatActivity implements NeueKasse.Not
         String kasse = et_Kasse.getText().toString();
         //ToDo Meldung über ungültigen Namen IN EditText auslagern
         if (kasse.length() <= 0) {
-            snackbar("Ungültiger Kassennname.");
+            et_Kasse.setError(getString(R.string.error_kassenname));
         } else {
             kassennamen.add(kasse.trim());
         }

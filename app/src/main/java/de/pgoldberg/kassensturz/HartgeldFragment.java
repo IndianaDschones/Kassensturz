@@ -13,7 +13,7 @@ import android.widget.EditText;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class HartgeldFragment extends Fragment {
+public class HartgeldFragment extends android.support.v4.app.Fragment {
 
     private static double summeHartgeld = 0.0;
 

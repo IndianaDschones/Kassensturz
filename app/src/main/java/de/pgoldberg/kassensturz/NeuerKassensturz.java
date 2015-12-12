@@ -118,8 +118,7 @@ public class NeuerKassensturz extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_neuer_kassensturz, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
             return rootView;
         }
     }
@@ -177,10 +176,9 @@ public class NeuerKassensturz extends AppCompatActivity {
             return null;
         }
 
-        void calculateSum() {
-            HartgeldFragment hartgeldFragment = (HartgeldFragment) getFragmentManager().findFragmentById();
+/*        void calculateSum() {
+            HartgeldFragment hartgeldFragment = (HartgeldFragment) getFragmentManager().findFragmentById(R.id.fragment_hartgeld);
             hartgeldFragment.anzahlMunzenArrayFuellen();
-        }
-
+        }*/
     }
 }
